@@ -1,0 +1,320 @@
+/* MainContainer */
+.MainContainer {
+    height: 100vh;
+    flex-grow: 1;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.3s cubic-bezier(0, .98, 1, -0.01);
+    display: flex;
+}
+
+/* Banner */
+
+.banner {
+    height: 300px;
+    position: absolute;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+
+.banner .bannerImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner .bottomLayer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+}
+
+.banner .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 3;
+}
+
+.banner .content .breadCrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner .content .breadCrumb p {
+    color: #fff; 
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.banner .content .breadCrumb p span {
+    color: #fff; 
+}
+
+.banner .content .artist .left .name {
+    display: flex;
+    align-items: center;
+}
+
+.banner .content .artist .left .name h2 {
+    font-size: 50px;
+    color: #fff;
+}
+
+.banner .content .artist .left .name img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.banner .content .artist .left p {
+    font-size: 14px;
+    color: #fff;
+}
+
+.banner .content .artist .left p i {
+    margin-left: 6px;
+    color: #F1C40F;
+}
+
+.banner .content .artist .left p span {
+    color: #F1C40F;
+    margin-left: 5px;
+}
+
+.banner .content .artist .right {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+}
+
+.banner .content .artist .right a {
+    text-decoration: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #F1C40F;
+    border-radius: 100vh;
+    font-weight: bold;
+    text-align: center;
+}
+
+.banner .content .artist .right a:hover {
+    box-shadow: 5px 10px 20px #333;
+}
+
+/* menu */
+.menuList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px 25px;
+    background: #333;
+    width: 100%;
+    height: 40px;
+    margin-top: 300px;
+}
+
+.menuList h2 {
+    margin: 0; 
+}
+
+.menuList h2 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menuList p {
+    margin: 0; 
+}
+
+.menuList p a {
+    text-decoration: none;
+    color: #F1C40F;
+}
+
+
+/* Audio list */
+.audioList {
+    padding: 10px 30px;
+}
+
+.audioList .title {
+    font-size: 18px;
+    color: #fff;
+}
+
+.SongsContainer {
+    height: 220px;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    padding-right: 5px;
+}
+
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari) */
+.SongsContainer::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Hide scrollbar for Firefox */
+.SongsContainer {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Edge and Internet Explorer */
+.SongsContainer {
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.songs {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    width: 100%;
+    margin: 10px 0;
+    padding: 1px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.songs:hover .song, .songs.active .song {
+    color: #F1C40F; /* Change text color on hover and active */
+  }
+  
+  .songs:hover .spanArtist, .songs.active .spanArtist {
+    color: #F1C40F; /* Change artist text color on hover and active */
+  }
+  
+  .songs:hover .hit, .songs.active .hit {
+    color: #F1C40F; /* Change hits text color on hover and active */
+  }
+  
+  .songs:hover .duration, .songs.active .duration {
+    color: #F1C40F; /* Change duration text color on hover and active */
+  }
+.count {
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.song {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.song::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #1ABC9C;
+}
+
+.song .imgBox {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 0.5em;
+    background: #333333;
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+.song .imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song .section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 15px; 
+}
+
+.song .section .songName {
+    width: 50%; 
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    color: #fff;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.song .section .spanArtist {
+    color: #fff;
+    margin-left: 5px; /* Space between song name and artist name */
+}
+
+.song .section .hits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%; 
+    margin-right: 50px;
+}
+
+.song .section .hits .hit {
+    color: #fff;
+}
+
+
+.song .section .hits .hit i {
+    font-size: 15px;
+    color: #1ABC9C;
+    filter: drop-shadow(0px 0px 4px #1ABC9C);
+    padding: 15px;
+}
+
+.song .section .hits .download i {
+    color: #1ABC9C;
+    padding: 15px;
+    filter: drop-shadow(0px 0px 4px #1ABC9C);
+    font-size: 15px;
+}
+
+.song .section .hits .duration {
+    margin-right: 20px;
+}
+
+.song .section .hits .duration i {
+    color: #1ABC9C;
+    filter: drop-shadow(0px 0px 4px #1ABC9C);
+    padding: 15px;
+    font-size: 15px;
+}
+
+.favorite {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #1ABC9C;
+    filter: drop-shadow(0px 0px 4px #1ABC9C);
+    margin-top: -12px;
+    margin-left: -25px;
+}
